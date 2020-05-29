@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'resources.apps.ResourcesConfig',
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
+    'todolist.apps.TodolistConfig',
     'crispy_forms',
 ]
 
