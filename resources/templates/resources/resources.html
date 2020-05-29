@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'resources/main.css' %}">
+	<ul>
+	  {% for post in posts %}
+	  <li>
+	    <a href="#">
+	      <h2>{{ post.title }}</h2>
+	      <p>{{ post.content }}</p>
+	    </a>
+	    <font size="1"
+          face="arial" 
+          color="#666"> 
+            {{ post.author }} <small>{{ post.date_posted|date:'d F Y' }}</small>
+        </font>
+	  </li>
+	  {% endfor %}
+	</ul>
+
+{% endblock content %}
