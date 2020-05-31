@@ -87,3 +87,25 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+/* Style for homepage */
+.home-header {
+  height: 100%;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.home-header h1{
+  margin: 60px;
+}
+
+.home-header h2{
+  color: #666;
+  text-size: 12px;
+}
+
+.home-main {
+  height: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+}
