@@ -1,8 +1,43 @@
 {% extends "home/base.html" %}
-{% load static %}
 {% block content %}
-	<h1>To-Do List</h1>
-	<h2>Pending Tasks</h2>
-	<h2>Completed Tasks</h2>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'todolist/main.css' %}">
+
+<title>ORI | To-Do List</title>
+
+<h2>Tasks</h2>
+
+<form action="{% url 'add'%}" method="POST" role="form">
+	{% csrf_token %}
+	<div class="todolist">
+		<div class="input-group">
+			{{ form.text }}
+			<span class="input-group-btn">
+				<button type="submit" class="btn btn-outline-dark"" id="add-btn">INSERT</button>
+			</span>
+		</div>
+	</div>
+</form>
+
+<div class="btn-group">
+	<a href="{% url 'deletecomplete'%}"><button type="button" class="btn btn-warning">CLEAR COMPLETED
+	</button></a>
+</div>
+<div class="btn-group">
+	<a href="{% url 'deleteall' %}"><button type="button" class="btn btn-danger"> DELETE ALL
+	</button></a>
+</div>
+
+<div class="todolist-list">
+	<ul class="list-group t20">
+		{% for task in todo_list %}
+		{% if task.complete %}
+		<li class="list-group-item task-completed" style="color:#d9d9d9">{{ task.text }}</li>
+		{% else %}
+		<a href="{% url 'complete' task.id %}"><li class="list-group-item">{{ task.text }}</li></a>
+		{% endif %}
+		{% endfor %}
+	</ul>
+</div>
 
 {% endblock content %}
