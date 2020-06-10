@@ -1,5 +1,6 @@
 from django import forms
 
+
 class TodoListForm(forms.Form):
     text = forms.CharField(max_length=100,
     widget = forms.TextInput(

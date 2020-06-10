@@ -6,7 +6,7 @@ from .models import Task
 from .forms import TodoListForm
 
 def todolist(request):
-    todo_list = Task.objects.order_by('id')
+    todo_list = Task.objects.order_by('-submission_date')
 
     form = TodoListForm()
 

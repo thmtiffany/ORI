@@ -1,0 +1,13 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+header{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+
+.about-body {
+  margin-bottom: 40px;
+}

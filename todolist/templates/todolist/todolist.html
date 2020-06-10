@@ -29,15 +29,15 @@
 </div>
 
 <div class="todolist-list">
-	<ul class="list-group t20">
-		{% for task in todo_list %}
-		{% if task.complete %}
-		<li class="list-group-item task-completed" style="color:#d9d9d9">{{ task.text }}</li>
-		{% else %}
-		<a href="{% url 'complete' task.id %}"><li class="list-group-item">{{ task.text }}</li></a>
-		{% endif %}
-		{% endfor %}
-	</ul>
+	{% for task in todo_list %}
+	{% if task.complete %}
+	<li class="list-group-item task-completed" style="color:#d9d9d9">{{ task.text }}
+		<small>{{ task.submission_date|date:'d F Y' }}</small></li>
+	{% else %}
+	<a href="{% url 'complete' task.id %}"><li class="list-group-item">{{ task.text }}</a>
+		<small>{{ task.submission_date|date:'d F Y' }}</small>
+	{% endif %}
+	{% endfor %}
 </div>
 
 {% endblock content %}
