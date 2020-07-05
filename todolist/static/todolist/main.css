@@ -5,9 +5,10 @@ a {
 .btn-group {
   margin-top: 10px;
   margin-bottom: 10px;
+  align-items: center;
 }
 
-.todolist-list small {
+.todolist-list p {
   align: right;
-  color: #d9d9d9;
+  color: #404040;
 }

@@ -5,7 +5,7 @@
 
 <title>ORI | To-Do List</title>
 
-<h2>Tasks</h2>
+<h2>To-Do List</h2>
 
 <form action="{% url 'add'%}" method="POST" role="form">
 	{% csrf_token %}
@@ -32,10 +32,10 @@
 	{% for task in todo_list %}
 	{% if task.complete %}
 	<li class="list-group-item task-completed" style="color:#d9d9d9">{{ task.text }}
-		<small>{{ task.submission_date|date:'d F Y' }}</small></li>
+		<p style="text-align:right">{{ task.submission_date|date:'d F Y' }}</p></li>
 	{% else %}
 	<a href="{% url 'complete' task.id %}"><li class="list-group-item">{{ task.text }}</a>
-		<small>{{ task.submission_date|date:'d F Y' }}</small>
+		<p style="text-align:right">{{ task.submission_date|date:'d F Y' }}</p>
 	{% endif %}
 	{% endfor %}
 </div>
